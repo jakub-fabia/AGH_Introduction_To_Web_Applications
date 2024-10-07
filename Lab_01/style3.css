@@ -1,0 +1,14 @@
+.base {
+    margin: 5px;
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+.next {
+    clear: left;
+}
+
+.image {
+    content: url(Yin_and_Yang_symbol.svg.png);
+}
