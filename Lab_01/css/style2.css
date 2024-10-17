@@ -3,3 +3,6 @@ table, tr, td {
     border: 1px solid;
     border-collapse: collapse;
 }
+body {
+    background-color: lightblue;
+}
