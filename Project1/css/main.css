@@ -1,0 +1,165 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Cinzel", serif;
+    color: #EAEAEA;
+    background-color: #2B2F3A;
+    scroll-behavior: smooth;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    background-color: #363B5C;
+    color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-button {
+    font-size: 20px;
+    padding: 8px 24px;
+    height: 70px;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    color: #D4AF37;
+    background-color: #1e244a;
+}
+
+.logo {
+    background-color: #1e244a;
+}
+
+.right {
+    margin-left: auto;
+}
+
+
+.background-img-1, .background-img-2, .background-img-3 {
+    display: flex;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-img-1 {
+    background-position: top;
+    padding-top: 70px;
+    background-image: url('../img/wawel_1.jpg');
+    min-height: 100vh;
+}
+
+.background-img-2 {
+    background-image: url('../img/wawel_2.jpg');
+    min-height: 100vh;
+}
+
+.background-img-3 {
+    background-image: url('../img/wawel_3.jpg');
+    min-height: 100vh;
+}
+
+.title-text{
+    transform: translateY(150%);
+    font-family: "Kings", cursive;
+    font-size: 50px;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: rgba(0,0,0,0.75);
+    color: #D4AF37;
+}
+
+.content{
+    flex-wrap: wrap;
+    padding: 0.01em 16px;
+    padding-top: 64px !important;
+    padding-bottom: 100px !important;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.columns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.left-col{
+    padding-right: 10px;
+    width: calc(55% - 30px);
+}
+
+.right-col{
+    float: right;
+    margin-right: 20px;
+    width: 45%;
+}
+
+.content img{
+    max-width: 100%;
+}
+
+.content h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    background-color: #363B5C;
+    padding: 16px 0;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .nav-button {
+        font-size: 16px;
+        padding: 6px 12px;
+        height: 40px;
+    }
+    .logo img{
+        max-height: 40px;
+    }
+    .background-img-1, .background-img-2, .background-img-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+    }
+    .title-text{
+        top: 45%;
+        font-size: 25px;
+    }
+    .columns{
+        flex-direction: column;
+    }
+    .left-col{
+        width: 100%;
+    }
+    .right-col{
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+    }
+    .right-col img{
+        max-width: calc(100% - 60px);
+    }
+}
