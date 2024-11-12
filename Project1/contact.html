@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet">
     <meta name="description" content="Witamy na Zamku Królewskim na Wawelu. Wielowiekowa siedziba królów i symbol polskiej państwowości">
     <meta name="Keywords" content="Wawel Zamek, zamek na Wawelu, edukacja na Wawelu, zwiedzanie Wawel, bilety na Wawel, zwiedzanie zamku na Wawelu, muzyka na Wawelu">
     <meta name="Author" content="Jakub Fabia">
@@ -22,9 +24,33 @@
     <a class="nav-button" href="javascript:void(0)">CONTACT</a>
     <a class="nav-button right" href="javascript:void(0)" onclick="toggleLanguage(this)">EN</a>
 </nav>
-<p>CONTACT</p>
+<div class="content columns">
+    <div class="left-col">
+        Zamek Królewski na Wawelu<br>
+        ul. Wawel 5<br>
+        31-001 Kraków<br>
+        +48 712 019 126<br>
+        kontakt@wawel.pl<br><br>
+        <form id="form">
+            <select id="subject" name="subject" required>
+                <option value="" selected hidden disabled>Subject</option>
+                <option value="GI">General inquiries</option>
+                <option value="TBI">Tour booking inquiries</option>
+                <option value="EEI">Event and exhibition information</option>
+                <option value="AVS">Accessibility and visitor services</option>
+                <option value="GSV">Group or school visits</option>
+            </select>
+            <input type="text" placeholder="E-Mail" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+            <textarea class="message" type="text" placeholder="Message" rows="4" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <div class="right-col">
+        <img src="img/wawel_rysunek.jpg">
+    </div>
+</div>
 <footer>
-    Jakub Fabia
+    <h2>Jakub Fabia</h2>
 </footer>
 <script src="js/main.js"></script>
 </body>
