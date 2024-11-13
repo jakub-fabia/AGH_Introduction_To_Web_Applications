@@ -24,10 +24,66 @@
     <a class="nav-button" href="contact.html">CONTACT</a>
     <a class="nav-button right" href="javascript:void(0)" onclick="toggleLanguage(this)">EN</a>
 </nav>
-<p>GALLERY</p>
-<footer>
-    <h2>Jakub Fabia</h2>
-</footer>
+<div id="page-container">
+    <div id="content-wrap">
+        <div class="background-img-gallery">
+            <h1 class="title-text">Gallery</h1>
+        </div>
+        <div class="content">
+            <div class="gallery-row">
+                <div class="gallery-element">
+                    <img src="img/gallery/1.jpg" onclick="onClickImage(this)" alt="The mist over the mountains">
+                </div>
+                <div class="gallery-element">
+                    <img src="img/gallery/2.jpg" onclick="onClickImage(this)" alt="The mist over the mountains">
+                </div>
+                <div class="gallery-element">
+                    <img src="img/gallery/3.jpg" onclick="onClickImage(this)" alt="The mist over the mountains">
+                </div>
+            </div>
+            <div class="gallery-row">
+                <div class="gallery-element">
+                    <img src="img/gallery/4.jpg" onclick="onClickImage(this)" alt="The mist over the mountains">
+                </div>
+                <div class="gallery-element">
+                    <img src="img/gallery/5.jpg" onclick="onClickImage(this)">
+                </div>
+                <div class="gallery-element">
+                    <img src="img/gallery/6.jpg" onclick="onClickImage(this)">
+                </div>
+            </div>
+            <div class="gallery-row">
+                <div class="gallery-element">
+                    <img src="img/gallery/7.JPG" onclick="onClickImage(this)">
+                </div>
+                <div class="gallery-element">
+                    <img src="img/gallery/8.JPG" onclick="onClickImage(this)">
+                </div>
+                <div class="gallery-element">
+                    <img src="img/gallery/9.jpg" onclick="onClickImage(this)">
+                </div>
+            </div>
+            <div class="gallery-row">
+                <div class="gallery-element">
+                    <img src="img/gallery/10.jpg" onclick="onClickImage(this)">
+                </div>
+                <div class="gallery-element">
+                    <img src="img/gallery/11.jpg" onclick="onClickImage(this)">
+                </div>
+                <div class="gallery-element">
+                    <video src="img/gallery/wawel_viedo.mp4" onclick="onClickVideo(this)"></video>
+                </div>
+            </div>
+        </div>
+        <div id="fullscreen" class="fullscreen-photo" onclick="document.getElementById('fullscreen-video').pause(); this.style.display='none'" style="display: none;">
+            <img id="fullscreen-image" class="fullscreen-element">
+            <video id="fullscreen-video" class="fullscreen-element" style="display: none;" autoplay></video>
+        </div>
+    </div>
+    <footer>
+        <h2>Jakub Fabia</h2>
+    </footer>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>

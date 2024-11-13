@@ -24,34 +24,38 @@
     <a class="nav-button" href="javascript:void(0)">CONTACT</a>
     <a class="nav-button right" href="javascript:void(0)" onclick="toggleLanguage(this)">EN</a>
 </nav>
+<div id="page-container">
+    <div id="content-wrap">
 <div class="content columns">
     <div class="left-col">
-        Zamek Królewski na Wawelu<br>
-        ul. Wawel 5<br>
-        31-001 Kraków<br>
-        +48 712 019 126<br>
-        kontakt@wawel.pl<br><br>
-        <form id="form">
-            <select id="subject" name="subject" required>
-                <option value="" selected hidden disabled>Subject</option>
-                <option value="GI">General inquiries</option>
-                <option value="TBI">Tour booking inquiries</option>
-                <option value="EEI">Event and exhibition information</option>
-                <option value="AVS">Accessibility and visitor services</option>
-                <option value="GSV">Group or school visits</option>
-            </select>
-            <input type="text" placeholder="E-Mail" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
-            <textarea class="message" type="text" placeholder="Message" rows="4" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+                Zamek Królewski na Wawelu<br>
+                ul. Wawel 5<br>
+                31-001 Kraków<br>
+                +48 712 019 126<br>
+                kontakt@wawel.pl<br><br>
+                <form id="form">
+                    <select id="subject" name="subject" required>
+                        <option value="" selected hidden disabled>Subject</option>
+                        <option value="GI">General inquiries</option>
+                        <option value="TBI">Tour booking inquiries</option>
+                        <option value="EEI">Event and exhibition information</option>
+                        <option value="AVS">Accessibility and visitor services</option>
+                        <option value="GSV">Group or school visits</option>
+                    </select>
+                    <input type="text" placeholder="E-Mail" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+                    <textarea class="message" type="text" placeholder="Message" rows="4" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="right-col">
+                <img src="img/wawel_rysunek.jpg">
+            </div>
+        </div>
     </div>
-    <div class="right-col">
-        <img src="img/wawel_rysunek.jpg">
-    </div>
+    <footer>
+        <h2>Jakub Fabia</h2>
+    </footer>
 </div>
-<footer>
-    <h2>Jakub Fabia</h2>
-</footer>
 <script src="js/main.js"></script>
 </body>
 </html>
