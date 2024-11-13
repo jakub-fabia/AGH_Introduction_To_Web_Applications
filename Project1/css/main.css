@@ -34,12 +34,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    transition: background-color, color, border-left-color, border-right-color 0.3s ease;
 }
 
 .nav-button:hover {
     color: #D4AF37;
     background-color: #1e244a;
+    border-right: #D4AF37 solid 1px;
+    border-left: #D4AF37 solid 1px;
 }
 
 #page-container {
@@ -48,7 +50,7 @@ nav {
 }
 
 #content-wrap {
-    padding-bottom: 2.5rem;
+    padding-bottom: 1rem;
 }
 
 .logo {
