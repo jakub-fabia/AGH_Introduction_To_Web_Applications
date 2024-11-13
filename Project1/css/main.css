@@ -61,7 +61,6 @@ nav {
     margin-left: auto;
 }
 
-
 .background-img-1, .background-img-2, .background-img-3, .background-img-gallery {
     display: flex;
     background-attachment: fixed;
@@ -222,6 +221,10 @@ input, select, button, textarea{
     }
     .logo img{
         max-height: 40px;
+    }
+    .background-img-gallery {
+        background-attachment: scroll;
+        min-height: 400px;
     }
     .background-img-1, .background-img-2, .background-img-3 {
         background-attachment: scroll;
