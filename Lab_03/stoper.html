@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stoper</title>
+    <style>
+        body {background-color: #000;}
+        .stopwatch {color: #fff;display: flex; font-size: 72px; justify-content: center; align-items: center; flex-direction: row; padding: 10px;}
+        button{margin: 5px; border: 1px solid #ccc; width: 175px; height: 100px; font-size: 36px;}
+        .buttons{display: flex; justify-content: center; align-items: center; flex-direction: row;}
+    </style>
+</head>
+<body>
+<div class="stopwatch">
+    <div style="margin-right:20px">Stoper:</div>
+    <div id="minutes" style="display: none; margin-right:20px"></div>
+    <div id="seconds">0 s</div>
+</div>
+<div class="buttons">
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+  <button onclick="reset()">Reset</button>
+</div>
+<script>
+    var startTime;
+    var intervalTime;
+    var timeFromStop = 0;
+
+
+    function start() {
+        if (!intervalTime) {
+            startTime = Date.now() - timeFromStop;
+            intervalTime = setInterval(updateTime, 1000);
+        }
+    }
+
+    function stop() {
+        clearInterval(intervalTime);
+        timeFromStop = Date.now() - startTime;
+        intervalTime = null;
+    }
+
+    function reset () {
+        clearInterval(intervalTime);
+        intervalTime = null;
+        timeFromStop = 0;
+        document.getElementById("minutes").style.display = "none";
+        document.getElementById("seconds").innerHTML = ("0 s");
+    }
+
+    function updateTime() {
+        var currentTime = Date.now();
+        var elapsedTime = currentTime - startTime;
+        var seconds = Math.floor(elapsedTime/1000)%60;
+        var minutes = Math.floor(elapsedTime/1000/60)%60;
+        document.getElementById("seconds").innerHTML = (seconds + " s");
+        if (minutes > 0) {
+            document.getElementById("minutes").style.display = "flex";
+        }
+        document.getElementById("minutes").innerHTML = minutes + " min";
+    }
+</script>
+</body>
+</html>
