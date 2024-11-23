@@ -14,24 +14,8 @@ function baseMenu(){
     c.textBaseline = 'middle';
 }
 
-function drawMenu() {
-    baseMenu();
-    c.fillText(`Zombie Shooter`, canvas.width / 2,150);
-
-    menuButtons.forEach(button => {
-        c.fillStyle = button.selected ? 'red' : 'white';
-        c.fillRect(button.x, button.y, button.width, button.height);
-
-        c.font = 'bold 72px Arial';
-        c.fillStyle = 'black';
-        c.textAlign = 'center';
-        c.textBaseline = 'middle';
-        c.fillText(button.label, button.x + button.width / 2, button.y + button.height / 2);
-    });
-}
-
 function handleMenuClick(event) {
-    if (inGame || playerDead) return;
+    if (gameState.inGame || gameState.playerDead) return;
 
     const mouseX = event.clientX;
     const mouseY = event.clientY;
@@ -44,25 +28,17 @@ function handleMenuClick(event) {
             mouseY < button.y + button.height
         ) {
             if (button.label === 'Play') {
-                if(difficulty !== "") {
-                    inGame = true;
+                if(gameState.difficulty !== "") {
                     menuButtons.forEach(b => (b.selected = false));
+                    startGame()
                     removeMenuListeners();
                 }
             } else{
                 menuButtons.forEach(b => (b.selected = false));
                 button.selected = true;
-                difficulty = button.label;
+                gameState.difficulty = button.label;
             }
         }
     });
 }
 
-
-function addMenuListeners() {
-    canvas.addEventListener('click', handleMenuClick);
-}
-
-function removeMenuListeners() {
-    canvas.removeEventListener('click', handleMenuClick);
-}
