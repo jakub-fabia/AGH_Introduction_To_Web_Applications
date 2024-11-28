@@ -6,7 +6,7 @@ const menuButtons = [
 ];
 
 function baseMenu(){
-    c.fillStyle = 'rgba(0, 0, 0, 0.8)'; // Black with 80% opacity
+    c.fillStyle = 'rgba(0, 0, 0, 0.8)';
     c.fillRect(canvas.width/4, 0, canvas.width*0.50, canvas.height);
     c.font = 'bold 100px Arial';
     c.fillStyle = 'red';
@@ -14,7 +14,7 @@ function baseMenu(){
     c.textBaseline = 'middle';
 }
 
-function handleMenuClick(event) {
+function handleMainMenuClick(event) {
     if (gameState.inGame || gameState.playerDead) return;
 
     const mouseX = event.clientX;
@@ -30,8 +30,8 @@ function handleMenuClick(event) {
             if (button.label === 'Play') {
                 if(gameState.difficulty !== "") {
                     menuButtons.forEach(b => (b.selected = false));
-                    startGame()
-                    removeMenuListeners();
+                    setGameStateStart();
+                    removeMainMenuListener();
                 }
             } else{
                 menuButtons.forEach(b => (b.selected = false));

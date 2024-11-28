@@ -7,17 +7,17 @@ const gameState = {
     difficulty: "",
 };
 
-function startGame() {
+function setGameStateStart() {
     gameState.inGame = true;
     gameState.playerDead = false;
 }
 
-function endGame() {
+function setGameStateGameOver() {
     gameState.inGame = false;
     gameState.playerDead = true;
 }
 
-function resetGameState() {
+function setGameStateMenu() {
     gameState.inGame = false;
     gameState.playerDead = false;
     gameState.currentLife = 3;

@@ -1,8 +1,8 @@
-function drawBackground() {
+function renderBackground() {
     c.drawImage(background, 0,0, background.width, background.height, 0,0, canvas.width, canvas.height)
 }
 
-function drawCursor() {
+function renderCrosshair() {
     c.shadowBlur = 2;
     c.shadowColor = '#999';
     const crosshairSize = 300;
@@ -10,21 +10,19 @@ function drawCursor() {
     c.shadowBlur = 0;
 }
 
-function drawLives() {
+function renderLives() {
     const lifeImage = lifeImages[gameState.currentLife];
     c.drawImage(lifeImage, 50, 50);
 }
 
-function drawMenu() {
+function renderMainMenu() {
     sadMusic.pause()
     sadMusic.currentTime = 0;
     baseMenu();
     c.fillText(`Zombie Shooter`, canvas.width / 2,150);
-
     menuButtons.forEach(button => {
         c.fillStyle = button.selected ? 'red' : 'white';
         c.fillRect(button.x, button.y, button.width, button.height);
-
         c.font = 'bold 72px Arial';
         c.fillStyle = 'black';
         c.textAlign = 'center';
@@ -33,7 +31,7 @@ function drawMenu() {
     });
 }
 
-function drawPoints() {
+function renderPoints() {
     const pointsDisplay = gameState.points.toString().padStart(5, '0');
     c.font = 'bold 100px Impact';
     c.fillStyle = 'white';
@@ -41,7 +39,7 @@ function drawPoints() {
     c.fillText(`${pointsDisplay}`, canvas.width - 50, 150);
 }
 
-function drawDeadMenu() {
+function renderGameOverMenu() {
     sadMusic.play()
     baseMenu();
     zombies = []

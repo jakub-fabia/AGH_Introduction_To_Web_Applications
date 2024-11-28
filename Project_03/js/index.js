@@ -1,31 +1,41 @@
-function display() {
-    drawBackground();
-    drawLives();
-    drawPoints();
-
+function gameLoop() {
+    renderBackground();
+    renderLives();
+    renderPoints();
     if (!gameState.inGame && !gameState.playerDead) {
-        drawMenu();
+        renderMainMenu();
     } else if (gameState.inGame) {
-        if (!gameState.startZombieGenerationActive) {
-            removeMenuListeners();
-            addShootingListeners();
-            setDifficulty();
-            gameState.startZombieGenerationActive = true;
-            startZombieGeneration();
-        }
-        updateZombies();
-        if (gameState.currentLife === 0) {
-            endGame();
-            removeShootingListeners();
-            addDeadMenuListeners();
-        }
+        handleGameInProgress();
     } else {
-        drawDeadMenu();
+        renderGameOverMenu();
     }
-
-    drawCursor();
-    window.requestAnimationFrame(display);
+    renderCrosshair();
+    window.requestAnimationFrame(gameLoop);
 }
 
-addMenuListeners();
-display();
+function handleGameInProgress() {
+    if (!gameState.startZombieGenerationActive) {
+        initializeGameSession();
+    }
+    updateZombies();
+    if (gameState.currentLife === 0) {
+        endGameSession();
+    }
+}
+
+function initializeGameSession() {
+    removeMainMenuListener();
+    addShootingListener();
+    setDifficulty();
+    gameState.startZombieGenerationActive = true;
+    startZombieGeneration();
+}
+
+function endGameSession() {
+    setGameStateGameOver();
+    removeShootingListener();
+    addGameOverListener();
+}
+
+addMainMenuListener();
+gameLoop();

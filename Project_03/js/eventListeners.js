@@ -1,23 +1,23 @@
-function addDeadMenuListeners() {
-    canvas.addEventListener('click', handleDeadMenuClick);
+function addGameOverListener() {
+    canvas.addEventListener('click', handleGameOverMenuClick);
 }
 
-function removeDeadMenuListeners() {
-    canvas.removeEventListener('click', handleDeadMenuClick);
+function removeGameOverMenuListener() {
+    canvas.removeEventListener('click', handleGameOverMenuClick);
 }
 
-function addShootingListeners() {
+function addShootingListener() {
     canvas.addEventListener('click', handleShooting);
 }
 
-function removeShootingListeners() {
+function removeShootingListener() {
     canvas.removeEventListener('click', handleShooting);
 }
 
-function addMenuListeners() {
-    canvas.addEventListener('click', handleMenuClick);
+function addMainMenuListener() {
+    canvas.addEventListener('click', handleMainMenuClick);
 }
 
-function removeMenuListeners() {
-    canvas.removeEventListener('click', handleMenuClick);
+function removeMainMenuListener() {
+    canvas.removeEventListener('click', handleMainMenuClick);
 }
