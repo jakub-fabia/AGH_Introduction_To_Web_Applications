@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"testmail1@mail.pl\",\n    \"password\": \"testPassword1\"\n}",
+					"raw": "{\n    \"email\": \"Testuser22\",\n    \"password\": \"password12234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -119,7 +119,7 @@
 						}
 					}
 				},
-				"url": "http://127.0.0.1:3000/api/books/"
+				"url": "http://127.0.0.1:5000/api/books/"
 			},
 			"response": []
 		},
@@ -191,7 +191,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"bookID\": 1,\n    \"quantity\": 2\n}",
+					"raw": "{\n    \"userId\": 1,\n    \"bookId\": 2,\n    \"quantity\": 5\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -227,7 +227,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"bookID\" : 5,\n    \"quantity\" : 10\n}",
+					"raw": "{\n    \"bookId\" : 2,\n    \"quantity\" : 10\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -242,7 +242,7 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoidGVzdG1haWwxQG1haWwucGwiLCJpYXQiOjE3MzMyNjk5NDUsImV4cCI6MTczMzI3MzU0NX0.dXINyLRmU5ZQoxG7nZUO2Xq7Ewoi4rlCZ20ld_fRefE"
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoiVGVzdHVzZXIyMiIsImlhdCI6MTczMzI3Mzc4NSwiZXhwIjoxNzMzMjc3Mzg1fQ.9eRHMUps5wHZtYKoFBFjcf1QsnQop3qqAvNRSY3bJP0"
 		}
 	},
 	"event": [

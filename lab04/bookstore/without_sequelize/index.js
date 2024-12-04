@@ -9,7 +9,6 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// GET ALL
 app.get("/api/books/", async function(req, res) {
     try {
         const allBooks = await books.getBooks();
@@ -19,7 +18,6 @@ app.get("/api/books/", async function(req, res) {
     }
 });
 
-// GET by ID
 app.get("/api/books/:id", async function(req, res) {
     try {
         const book = await books.getBookById(req.params.id);
@@ -33,7 +31,6 @@ app.get("/api/books/:id", async function(req, res) {
     }
 });
 
-// POST - Add a new book
 app.post("/api/books", users.verifyToken, async function(req, res) {
     const bookTitle = req.body.bookTitle;
     const bookAuthor = req.body.bookAuthor;
@@ -46,7 +43,6 @@ app.post("/api/books", users.verifyToken, async function(req, res) {
     }
 });
 
-// DELETE - Delete a book by ID
 app.delete("/api/books/:id", users.verifyToken, async function(req, res) {
     try {
         const result = await books.deleteBook(req.params.id);
@@ -76,7 +72,7 @@ app.post("/api/register", async function(req, res) {
 app.post('/api/login', async (req, res) => {
     const { email, password } = req.body;
     try {
-        const loginResponse = await users.loginUser(email, password); // users should contain the loginUser function
+        const loginResponse = await users.loginUser(email, password);
 
         if (loginResponse.success) {
             res.send({
@@ -93,13 +89,11 @@ app.post('/api/login', async (req, res) => {
 
 app.get("/api/orders/:id", async function(req, res) {
     try {
-        const result = await orders.getOrdersOfUser(req.params.id);  // Fetch orders for user by ID
+        const result = await orders.getOrdersOfUser(req.params.id);
 
         if (Array.isArray(result)) {
-            // If result is an array of orders, send them in response
             res.send(result);
         } else {
-            // If result is a message (no orders found)
             res.status(404).send({ message: result.message });
         }
     } catch (err) {
@@ -157,6 +151,6 @@ app.patch("/api/orders/:id", users.verifyToken, async function(req, res) {
     }
 })
 
-app.listen(process.env.PORT || 5000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Server Started!");
 });

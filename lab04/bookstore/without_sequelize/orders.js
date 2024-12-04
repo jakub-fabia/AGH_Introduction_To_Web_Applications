@@ -7,9 +7,9 @@ function getOrdersOfUser(id) {
                 reject(err);
             } else {
                 if (rows.length > 0) {
-                    resolve(rows);  // Return the list of orders
+                    resolve(rows);
                 } else {
-                    resolve({ message: 'No orders found for this user.' });  // No orders found
+                    resolve({ message: 'No orders found for this user.' });
                 }
             }
         });
@@ -63,7 +63,6 @@ function editOrder(userID, orderID, bookID, quantity) {
             } else if (!row) {
                 resolve({ success: false, message: 'No order found with the given ID or order not assigned to your account.' });
             } else {
-                // Combine the updates into a single query
                 db.run('UPDATE orders SET bookID = ?, quantity = ? WHERE orderID = ? AND userID = ?',
                     [bookID, quantity, orderID, userID], (err) => {
                         if (err) {

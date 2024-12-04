@@ -33,7 +33,7 @@ function loginUser(email, password) {
                 return resolve({ success: false, message: 'Invalid email or password!' });
             }
 
-            if (row.password === password) { // Plaintext comparison
+            if (row.password === password) {
                 const token = jwt.sign(
                     { userID: row.userID, email: row.email },
                     process.env.JWT_SECRET || 'default_secret',
@@ -62,7 +62,7 @@ const verifyToken = (req, res, next) => {
         if (err) {
             return res.status(403).send({ message: 'Invalid or expired token' });
         }
-        req.user = user; // Attach the decoded token data to the request
+        req.user = user;
         next();
     });
 };
