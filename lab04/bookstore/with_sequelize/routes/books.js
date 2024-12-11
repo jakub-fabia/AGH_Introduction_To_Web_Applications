@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { Book } = require('./sequelize');
-const { authenticateJWT } = require('./server');
+const { Book } = require('../sequelize');
+const { authenticateJWT } = require('../tokens');
 
 router.get('/', async (req, res) => {
     try {

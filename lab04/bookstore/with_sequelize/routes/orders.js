@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { User, Book, Order } = require('./sequelize');
-const { authenticateJWT } = require('./server');
+const { User, Book, Order } = require('../sequelize');
+const { authenticateJWT } = require('../tokens');
 
 router.get('/:userId', authenticateJWT, async (req, res) => {
     const { userId } = req.params;
@@ -63,7 +63,8 @@ router.patch('/:id', authenticateJWT, async (req, res) => {
     try {
         const orderId = req.params.id;
         const { quantity, bookId } = req.body;
-        if ((!quantity && !bookId) || quantity <= 0) {
+        const book = await Book.findByPk(bookId);
+        if (!book || (!quantity && !bookId) || quantity <= 0) {
             return res.status(400).json({ message: 'Invalid change' });
         }
         const order = await Order.findByPk(orderId);

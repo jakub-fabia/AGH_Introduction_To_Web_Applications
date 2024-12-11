@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c233a78b-2842-4f56-b6d5-be90f6e18cf6",
+		"_postman_id": "5768c47c-9dc3-4f18-b001-4ed82155a5d4",
 		"name": "Bookstore",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "40177035"
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"Testuser22\",\n    \"password\": \"password12234\"\n}",
+					"raw": "{\n    \"email\": \"TestRegisterUsername\",\n    \"password\": \"TestRegisterPassword\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"Testuser22\",\n    \"password\": \"password12234\"\n}",
+					"raw": "{\n    \"email\": \"user2@example.com\",\n    \"password\": \"password456\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,31 +99,6 @@
 			"response": []
 		},
 		{
-			"name": "Add Book",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "id",
-						"value": "1",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\" : \"Test title\",\n    \"author\" : \"Test author\",\n    \"year\" : 2024\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "http://127.0.0.1:5000/api/books/"
-			},
-			"response": []
-		},
-		{
 			"name": "Delete Book",
 			"request": {
 				"method": "DELETE",
@@ -146,6 +121,31 @@
 					}
 				},
 				"url": "http://127.0.0.1:5000/api/books/{{id}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "id",
+						"value": "1",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Test title\",\n    \"author\" : \"Test author\",\n    \"year\" : 2024\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/api/books/"
 			},
 			"response": []
 		},
@@ -191,7 +191,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"userId\": 1,\n    \"bookId\": 2,\n    \"quantity\": 5\n}",
+					"raw": "{\n    \"userId\": 3,\n    \"bookId\": 3,\n    \"quantity\": 2\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -227,7 +227,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"bookId\" : 2,\n    \"quantity\" : 10\n}",
+					"raw": "{\n    \"bookId\" : 7,\n    \"quantity\" : 10\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -242,7 +242,7 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoiVGVzdHVzZXIyMiIsImlhdCI6MTczMzI3Mzc4NSwiZXhwIjoxNzMzMjc3Mzg1fQ.9eRHMUps5wHZtYKoFBFjcf1QsnQop3qqAvNRSY3bJP0"
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoidXNlcjJAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzM5NTM4MTQsImV4cCI6MTczMzk1NzQxNH0.43INUl0Xa_8jcrXf0XXsRIvMhtcRgSLOMGaj_DsmR-4"
 		}
 	},
 	"event": [

@@ -1,13 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const { User } = require('./sequelize');
-const { SECRET_KEY } = require('./server');
-
-const generateToken = (userId, email) => {
-    return jwt.sign({ userId, email }, SECRET_KEY, { expiresIn: '1h' });
-};
+const { User } = require('../sequelize');
+const { generateToken } = require('../tokens');
 
 router.post('/register', async (req, res) => {
     const { email, password } = req.body;
