@@ -15,9 +15,6 @@ import {Comment, UserI, CommentI} from "./components/products/Comment";
 import {Comments} from "./components/products/Comments";
 
 function App() {
-    const user : UserI = {
-        fullName: "Jo Mama", id: 124, username: "sifaeuibdaslhfasbdlu"
-    }
     return <Comments />
 }
 

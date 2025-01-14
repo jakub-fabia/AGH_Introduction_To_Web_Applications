@@ -1,0 +1,11 @@
+.shrink {
+    transform: scale(0.5)
+}
+
+.grow {
+    transform: scale(1)
+}
+
+.animation {
+    transition: transform 1s ease-in-out;
+}
